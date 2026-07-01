@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: var(--font-dm-serif), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  
+  --color-miraya-black: #0D0D0D;
+  --color-miraya-burgundy: #5E0A0B; 
+  --color-miraya-gold: #C6A46A; 
+  --color-miraya-white: #F8F5F0; 
+  
+  --color-background: var(--color-miraya-white);
+  --color-foreground: var(--color-miraya-black);
+}
+
+@layer base {
+  :root {
+    --color-background: var(--color-miraya-white);
+    --color-foreground: var(--color-miraya-black);
+    --color-primary: var(--color-miraya-burgundy);
+  }
+
+  .dark {
+    --color-background: #111111; /* Deep Charcoal */
+    --color-foreground: var(--color-miraya-white);
+    --color-primary: var(--color-miraya-gold); /* Gold stands out better in dark mode */
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer utilities {
+  .glassmorphism {
+    @apply bg-miraya-white/70 backdrop-blur-md border border-miraya-white/20;
+  }
+  
+  .glassmorphism-dark {
+    @apply bg-miraya-black/70 backdrop-blur-md border border-miraya-white/10;
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+  
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(to bottom right, var(--color-miraya-gold), transparent, var(--color-miraya-black));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .shadow-luxury {
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08), 0 10px 20px -5px rgba(0, 0, 0, 0.04);
+  }
+}
+
+/* Smooth Scrolling */
+html { scroll-behavior: smooth; }
+
