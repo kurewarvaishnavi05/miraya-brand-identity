@@ -36,7 +36,7 @@ export default async function ProductPage(props: { params: Promise<{ id: string 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
           {/* Left: Gallery */}
           <div className="w-full lg:w-1/2">
-            <ProductGallery images={images} />
+            <ProductGallery images={images} productName="Midnight Velvet Bridal Lehenga" />
           </div>
 
           {/* Right: Info & Actions */}
