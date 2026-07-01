@@ -108,7 +108,7 @@ const ProductGallery: React.FC<ProductGalleryProps> = ({ images, productName }) 
             <div className="relative w-full h-full max-w-6xl max-h-[90vh] mx-auto flex items-center justify-center p-8">
                {/* Extremely large placeholder image */}
                <div className="w-full h-full bg-miraya-black/5 border border-miraya-black/10 flex items-center justify-center text-miraya-black/30 shadow-2xl">
-                 <span className="text-3xl font-serif">HD Zoomed Image {activeIndex + 1}</span>
+                 <span className="text-3xl font-serif">HD Zoomed Image {currentIndex + 1}</span>
                </div>
                
                <button 

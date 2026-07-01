@@ -107,7 +107,7 @@ const FilterSidebar = () => {
                         key={option.value}
                         title={option.label}
                         className="w-6 h-6 rounded-full border border-miraya-black/20 flex items-center justify-center hover:scale-110 transition-transform"
-                        style={{ backgroundColor: option.colorCode }}
+                        style={{ backgroundColor: 'colorCode' in option ? option.colorCode : undefined }}
                       >
                         {/* Selected State Example - Hardcoded to false for UI prototyping */}
                         {false && <Check size={12} className={option.value === 'ivory' ? 'text-miraya-black' : 'text-miraya-white'} />}
